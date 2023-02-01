@@ -16,7 +16,7 @@ pipeline{
                     docker.withRegistry('https://registry.hub.docker.com', 'dockerhub')
                         //dockerapp.push('latest')
                         //dockerapp.push("${env.BUILD_ID}")
-                        docker.image(dockerapp).inside {
+                        docker.image('dockerapp').inside {
                             sh 'make test'
                         }
             }
